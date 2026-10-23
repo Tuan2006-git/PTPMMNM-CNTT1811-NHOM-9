@@ -1,0 +1,7 @@
+.local/
+*.log
+.env
+env.local.sh
+
+# Cau hinh rieng, khong dua len GitHub
+/storage/config.php
