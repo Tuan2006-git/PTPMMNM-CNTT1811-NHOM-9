@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Đăng nhập | LUXE WEAR</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="tracker.js" defer></script>
+  <script src="auth-page.js" defer></script>
+</head>
+<body class="auth-page">
+  <header class="auth-header">
+    <a class="logo" href="index.html">LUXE WEAR.</a>
+    <a href="index.html">← Quay lại cửa hàng</a>
+  </header>
+  <main class="auth-shell">
+    <section class="auth-visual">
+      <div>
+        <span class="eyebrow">WELCOME BACK</span>
+        <h1>Phong cách<br>bắt đầu từ bạn.</h1>
+        <p>Đăng nhập để tiếp tục khám phá những lựa chọn thời trang dành riêng cho bạn.</p>
+      </div>
+      <small>LUXE WEAR · YOUR STYLE, YOUR RULES</small>
+    </section>
+    <section class="auth-form-panel">
+      <h2>Chào mừng trở lại</h2>
+      <p class="auth-intro">Nhập thông tin tài khoản để đăng nhập.</p>
+      <div class="auth-message" id="authMessage" role="status" aria-live="polite"></div>
+      <form class="auth-form" id="loginForm" novalidate>
+        <div class="auth-field">
+          <label for="email">ĐỊA CHỈ EMAIL</label>
+          <input id="email" name="email" type="email" autocomplete="email" placeholder="ban@email.com" required maxlength="190">
+        </div>
+        <div class="auth-field">
+          <label for="password">MẬT KHẨU</label>
+          <div class="auth-password-wrap">
+            <input id="password" name="password" type="password" autocomplete="current-password" placeholder="Nhập mật khẩu" required>
+            <button type="button" data-toggle-password="password">HIỆN</button>
+          </div>
+        </div>
+        <div class="auth-options">
+          <label><input type="checkbox" id="rememberEmail"> Ghi nhớ email trên thiết bị này</label>
+        </div>
+        <button class="auth-submit" type="submit">ĐĂNG NHẬP →</button>
+      </form>
+      <p class="auth-switch">Chưa có tài khoản? <a href="register.html">Tạo tài khoản</a></p>
+      <a class="auth-back" href="index.html">Tiếp tục mua sắm</a>
+    </section>
+  </main>
+</body>
+</html>

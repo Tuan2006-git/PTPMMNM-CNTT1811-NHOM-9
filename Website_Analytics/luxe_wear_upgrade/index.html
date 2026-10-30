@@ -1,0 +1,281 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUXE WEAR | Thời trang hiện đại</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <script src="script.js" defer></script>
+    <script src="auth-common.js" defer></script>
+</head>
+<body>
+    <div class="topbar">
+        CHÀO MỪNG ĐẾN LUXE WEAR · KHÁM PHÁ PHONG CÁCH CỦA BẠN
+    </div>
+
+    <header class="header">
+        <a href="index.html" class="logo">LUXE WEAR.</a>
+
+        <form class="search" id="searchForm">
+            <input id="searchInput" type="search"
+                   placeholder="Tìm áo khoác, quần jeans, kính mát...">
+            <button type="submit">⌕</button>
+        </form>
+
+        <div class="header-actions">
+            <a href="login.html">♙ Tài khoản</a>
+            <a href="#cartDrawer" id="cartToggle" aria-label="Mở giỏ hàng">♡ Giỏ hàng
+                <span class="cart-count" id="cartCount">0</span>
+            </a>
+        </div>
+    </header>
+
+    <nav class="nav">
+        <a href="#home" data-category="all">TRANG CHỦ</a>
+        <a href="#products" data-category="nam">NAM</a>
+        <a href="#products" data-category="nu">NỮ</a>
+        <a href="#products" data-category="ao">ÁO</a>
+        <a href="#products" data-category="quan">QUẦN</a>
+        <a href="#products" data-category="vay">VÁY</a>
+        <a href="#products" data-category="giay">GIÀY</a>
+        <a href="#products" data-category="dep">DÉP</a>
+        <a href="#products" data-category="phukien">PHỤ KIỆN</a>
+        <a href="#products" class="sale-link" data-category="sale">SALE</a>
+    </nav>
+
+    <main>
+        <section class="hero" id="home">
+            <div class="hero-copy">
+                <span class="eyebrow">NEW COLLECTION 2026</span>
+                <h1>Mặc đẹp.<br>phong cách.</h1>
+                <p>Khám phá bộ sưu tập quần áo, giày dép và phụ kiện
+                   dành cho những người trẻ hiện đại.</p>
+                <a href="#products" class="primary-btn">MUA SẮM NGAY →</a>
+            </div>
+
+            <div class="hero-photo">
+                <img
+                    src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1200&q=85"
+                    alt="Bộ sưu tập thời trang">
+            </div>
+        </section>
+
+        <section class="benefits">
+            <div><strong>✦ PHONG CÁCH HIỆN ĐẠI</strong><p>Lựa chọn đa dạng</p></div>
+            <div><strong>◇ MUA SẮM TIỆN LỢI</strong><p>Dễ dàng tìm kiếm sản phẩm</p></div>
+            <div><strong>↺ HỖ TRỢ KHÁCH HÀNG</strong><p>Đồng hành cùng bạn</p></div>
+        </section>
+
+        <section class="section" id="categories">
+            <div class="section-heading">
+                <div>
+                    <h2>Mua theo danh mục</h2>
+                    <p>Chọn phong cách phù hợp với bạn</p>
+                </div>
+            </div>
+
+            <div class="categories">
+                <a href="#products" class="category-card"
+                    data-category="nam"
+                    data-wi-track="nam">
+                    <img src="https://images.unsplash.com/photo-1516257984-b1b4d707412e?auto=format&fit=crop&w=500&q=80" alt="Thời trang nam">
+                    <h3>Thời trang nam</h3>
+                </a>
+                <a href="#products" class="category-card"
+                    data-category="nu"
+                    data-wi-track="nu">
+                    <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=500&q=80" alt="Thời trang nữ">
+                    <h3>Thời trang nữ</h3>
+                </a>
+                <a href="#products" class="category-card"
+                    data-category="ao"
+                    data-wi-track="ao">
+                    <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=500&q=80" alt="Áo">
+                    <h3>Các loại áo</h3>
+                </a>
+                <a href="#products" class="category-card"
+                    data-category="quan"
+                    data-wi-track="quan">
+                    <img src="https://images.unsplash.com/photo-1542272604-787c3835535d?auto=format&fit=crop&w=500&q=80" alt="Quần">
+                    <h3>Các loại quần</h3>
+                </a>
+                <a href="#products" class="category-card"
+                    data-category="giay"
+                    data-wi-track="giay">
+                    <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=500&q=80" alt="Giày">
+                    <h3>Giày</h3>
+                </a>
+                <a href="#products" class="category-card"
+                    data-category="phukien"
+                    data-wi-track="phukien">
+                    <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=500&q=80" alt="Phụ kiện">
+                    <h3>Túi & phụ kiện</h3>
+                </a>
+            </div>
+        </section>
+
+        <section class="section product-section" id="products">
+            <div class="section-heading">
+                <div>
+                    <h2>Khám phá sản phẩm</h2>
+                    <p>Quần áo, giày dép và phụ kiện thời trang</p>
+                </div>
+                <span id="resultCount">32 sản phẩm</span>
+            </div>
+
+
+            <div class="filters" id="mainFilters">
+                <button class="filter-btn active"
+                        data-category="all"
+                        data-wi-track="tat-ca">Tất cả</button>
+
+                <button class="filter-btn"
+                        data-category="nam"
+                        data-wi-track="nam">Đồ nam</button>
+
+                <button class="filter-btn"
+                        data-category="nu"
+                        data-wi-track="nu">Đồ nữ</button>
+
+                <button class="filter-btn"
+                        data-category="ao"
+                        data-wi-track="ao">Áo</button>
+
+                <button class="filter-btn"
+                        data-category="quan"
+                        data-wi-track="quan">Quần</button>
+
+                <button class="filter-btn"
+                        data-category="vay"
+                        data-wi-track="vay">Váy</button>
+
+                <button class="filter-btn"
+                        data-category="giay"
+                        data-wi-track="giay">Giày</button>
+
+                <button class="filter-btn"
+                        data-category="dep"
+                        data-wi-track="dep">Dép</button>
+
+                <button class="filter-btn"
+                        data-category="phukien"
+                        data-wi-track="phukien">Phụ kiện</button>
+
+                <button class="filter-btn"
+                        data-category="sale"
+                        data-wi-track="sale">Đang giảm giá</button>
+            </div>
+
+
+            <p class="filter-caption">LOẠI SẢN PHẨM</p>
+            <div class="subcategory-list" id="subcategories"></div>
+
+            <div class="catalog-toolbar">
+                <select id="genderFilter">
+                    <option value="all">Tất cả giới tính</option>
+                    <option value="nam">Nam</option>
+                    <option value="nu">Nữ</option>
+                    <option value="unisex">Unisex</option>
+                </select>
+
+                <select id="priceFilter">
+                    <option value="all">Tất cả mức giá</option>
+                    <option value="1">Dưới 200.000đ</option>
+                    <option value="2">200.000–500.000đ</option>
+                    <option value="3">500.000–1.000.000đ</option>
+                    <option value="4">Trên 1.000.000đ</option>
+                </select>
+
+                <select id="sortFilter">
+                    <option value="default">Sắp xếp mặc định</option>
+                    <option value="low">Giá thấp đến cao</option>
+                    <option value="high">Giá cao đến thấp</option>
+                    <option value="name">Tên A–Z</option>
+                </select>
+
+                <button id="resetFilters" type="button">Xóa bộ lọc</button>
+            </div>
+
+            <div class="products" id="productGrid"></div>
+            <p id="emptyMessage" hidden>Không tìm thấy sản phẩm phù hợp.</p>
+        </section>
+
+        <section class="promo">
+            <span class="eyebrow">YOUR STYLE, YOUR RULES</span>
+            <h2>Đơn giản nhưng khác biệt.</h2>
+            <p>Tự tin thể hiện cá tính qua từng bộ trang phục.</p>
+            <a href="#products" class="primary-btn">KHÁM PHÁ NGAY →</a>
+        </section>
+
+        <section class="newsletter">
+            <h2>Nhận tin từ LUXE WEAR</h2>
+            <p>Cập nhật sản phẩm mới và chương trình ưu đãi.</p>
+            <form id="newsletterForm">
+                <input type="email" placeholder="Email của bạn" required>
+                <button type="submit">ĐĂNG KÝ →</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Chi tiet san pham -->
+    <div class="modal-backdrop" id="productModal" aria-hidden="true">
+        <section class="product-modal" role="dialog" aria-modal="true" aria-labelledby="detailName">
+            <button class="modal-close" id="closeProductModal" type="button" aria-label="Đóng">×</button>
+            <div id="productDetailContent"></div>
+        </section>
+    </div>
+
+    <!-- Gio hang -->
+    <div class="drawer-backdrop" id="cartBackdrop" aria-hidden="true"></div>
+    <aside class="cart-drawer" id="cartDrawer" aria-hidden="true" aria-label="Giỏ hàng">
+        <div class="cart-drawer-header">
+            <div>
+                <span class="eyebrow">LUXE WEAR</span>
+                <h2>Giỏ hàng của bạn</h2>
+            </div>
+            <button class="modal-close" id="closeCart" type="button" aria-label="Đóng giỏ hàng">×</button>
+        </div>
+        <div class="cart-items" id="cartItems"></div>
+        <div class="cart-summary">
+            <div class="cart-subtotal"><span>Tạm tính</span><strong id="cartSubtotal">0đ</strong></div>
+            <p>Phí vận chuyển sẽ được tính ở bước xác nhận đơn hàng.</p>
+            <button class="checkout-btn" id="checkoutBtn" type="button">TIẾN HÀNH ĐẶT HÀNG →</button>
+            <button class="continue-shopping" id="continueShopping" type="button">Tiếp tục mua sắm</button>
+        </div>
+    </aside>
+
+    <div class="toast" id="cartToast" role="status" aria-live="polite"></div>
+
+    <footer>
+        <div class="footer-grid">
+            <div>
+                <div class="footer-brand">LUXE WEAR.</div>
+                <p>Website bán hàng mẫu phục vụ học tập môn Phát triển phần mềm mã nguồn mở.</p>
+            </div>
+            <div>
+                <h3>MUA SẮM</h3>
+                <a href="#products" data-category="nam">Thời trang nam</a>
+                <a href="#products" data-category="nu">Thời trang nữ</a>
+                <a href="#products" data-category="giay">Giày dép</a>
+            </div>
+            <div>
+                <h3>HỖ TRỢ</h3>
+                <a href="#products">Hướng dẫn mua hàng</a>
+                <a href="#products">Chính sách đổi hàng</a>
+            </div>
+            <div>
+                <h3>TÀI KHOẢN</h3>
+                <a href="login.html">Đăng nhập</a>
+                <a href="register.html">Đăng ký tài khoản</a>
+            </div>
+        </div>
+        <div class="copyright">© 2026 LUXE WEAR. All rights reserved.</div>
+    </footer>
+
+
+<script src="http://127.0.0.1:8000/assets/tracker.js" data-key="wi_15f019a95592f2cb1431e8a02d0a13b9" defer></script>
+
+</body>
+</html>

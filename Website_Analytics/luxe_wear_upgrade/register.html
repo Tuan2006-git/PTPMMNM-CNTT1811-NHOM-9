@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tạo tài khoản | LUXE WEAR</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="tracker.js" defer></script>
+  <script src="auth-page.js" defer></script>
+</head>
+<body class="auth-page">
+  <header class="auth-header">
+    <a class="logo" href="index.html">LUXE WEAR.</a>
+    <a href="index.html">← Quay lại cửa hàng</a>
+  </header>
+  <main class="auth-shell">
+    <section class="auth-visual">
+      <div>
+        <span class="eyebrow">JOIN LUXE WEAR</span>
+        <h1>Tìm thấy<br>phong cách của bạn.</h1>
+        <p>Tạo tài khoản để trải nghiệm mua sắm tiện lợi và lưu thông tin tài khoản trên cửa hàng.</p>
+      </div>
+      <small>LUXE WEAR · YOUR STYLE, YOUR RULES</small>
+    </section>
+    <section class="auth-form-panel">
+      <h2>Tạo tài khoản</h2>
+      <p class="auth-intro">Chỉ mất một phút để bắt đầu.</p>
+      <div class="auth-message" id="authMessage" role="status" aria-live="polite"></div>
+      <form class="auth-form" id="registerForm" novalidate>
+        <div class="auth-field">
+          <label for="name">HỌ VÀ TÊN</label>
+          <input id="name" name="name" type="text" autocomplete="name" placeholder="Nguyễn Văn A" required minlength="2" maxlength="80">
+        </div>
+        <div class="auth-field">
+          <label for="email">ĐỊA CHỈ EMAIL</label>
+          <input id="email" name="email" type="email" autocomplete="email" placeholder="ban@email.com" required maxlength="190">
+        </div>
+        <div class="auth-field">
+          <label for="password">MẬT KHẨU</label>
+          <div class="auth-password-wrap">
+            <input id="password" name="password" type="password" autocomplete="new-password" placeholder="Ít nhất 8 ký tự" required minlength="8">
+            <button type="button" data-toggle-password="password">HIỆN</button>
+          </div>
+        </div>
+        <div class="auth-field">
+          <label for="confirmPassword">XÁC NHẬN MẬT KHẨU</label>
+          <div class="auth-password-wrap">
+            <input id="confirmPassword" name="confirmPassword" type="password" autocomplete="new-password" placeholder="Nhập lại mật khẩu" required minlength="8">
+            <button type="button" data-toggle-password="confirmPassword">HIỆN</button>
+          </div>
+        </div>
+        <label class="auth-terms"><input type="checkbox" id="agreeTerms" required> <span>Tôi đồng ý tạo tài khoản và cung cấp thông tin cần thiết để sử dụng website demo LUXE WEAR.</span></label>
+        <button class="auth-submit" type="submit">TẠO TÀI KHOẢN →</button>
+      </form>
+      <p class="auth-switch">Đã có tài khoản? <a href="login.html">Đăng nhập</a></p>
+      <a class="auth-back" href="index.html">Tiếp tục mua sắm</a>
+    </section>
+  </main>
+</body>
+</html>

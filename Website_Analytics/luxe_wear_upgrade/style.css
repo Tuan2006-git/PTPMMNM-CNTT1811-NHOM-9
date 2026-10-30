@@ -1,0 +1,1176 @@
+
+/* ========================================
+   LUXE WEAR - MAIN STYLESHEET
+   ======================================== */
+
+/* 1. BIEN MAU VA CAU HINH CHUNG */
+:root {
+    --black: #171717;
+    --muted: #777777;
+    --cream: #f5f2ed;
+    --border: #eaeaea;
+    --accent: #a77b55;
+    --white: #ffffff;
+    --sale: #b43d32;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 20px;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--black);
+    background: var(--white);
+    line-height: 1.5;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input,
+select {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+img {
+    max-width: 100%;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+}
+
+/* 2. THANH THONG BAO */
+.topbar {
+    background: var(--black);
+    color: var(--white);
+    text-align: center;
+    padding: 10px 15px;
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+
+/* 3. HEADER */
+.header {
+    padding: 22px 6%;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    align-items: center;
+    gap: 24px;
+}
+
+.logo {
+    font-size: 27px;
+    letter-spacing: 4px;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #aaaaaa;
+    padding: 10px 0;
+    min-width: 0;
+}
+
+.search input {
+    border: none;
+    outline: none;
+    width: 100%;
+    min-width: 0;
+    background: transparent;
+    font-size: 13px;
+}
+
+.search button {
+    background: none;
+    border: none;
+    padding: 0 8px;
+    font-size: 22px;
+}
+
+.header-actions {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 15px;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+.header-actions a:hover {
+    color: var(--accent);
+}
+
+.cart-count {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 22px;
+    height: 22px;
+    padding: 3px 6px;
+    border-radius: 50%;
+    background: var(--black);
+    color: var(--white);
+}
+
+/* 4. MENU DIEU HUONG */
+.nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 28px;
+    padding: 17px 12px;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    font-size: 12px;
+}
+
+.nav a {
+    transition: color 0.2s ease;
+}
+
+.nav a:hover {
+    color: var(--accent);
+}
+
+.nav .sale-link {
+    color: var(--sale);
+    font-weight: bold;
+}
+
+/* 5. BANNER CHINH */
+.hero {
+    margin: 24px auto 0;
+    width: 94%;
+    min-height: 420px;
+    background: #e8e1d7;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    overflow: hidden;
+}
+
+.hero-copy {
+    padding: 50px 8%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    min-width: 0;
+}
+
+.eyebrow {
+    display: block;
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: var(--accent);
+    font-weight: bold;
+}
+
+/* Tieu de banner - da sua loi gian chu */
+.hero h1 {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    margin: 20px 0;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(36px, 4.2vw, 58px);
+    font-weight: normal;
+    line-height: 1.12;
+
+    text-align: left;
+    text-align-last: left;
+    letter-spacing: -1px;
+    word-spacing: normal;
+    white-space: normal;
+    word-break: normal;
+    overflow-wrap: normal;
+    hyphens: none;
+}
+
+.hero h1 br {
+    display: block;
+}
+
+.hero-copy p {
+    max-width: 440px;
+    color: #555555;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.primary-btn {
+    display: inline-block;
+    background: var(--black);
+    color: var(--white);
+    border: 1px solid var(--black);
+    padding: 15px 23px;
+    margin-top: 25px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-align: center;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.primary-btn:hover {
+    background: transparent;
+    color: var(--black);
+}
+
+.hero-photo {
+    min-width: 0;
+    min-height: 420px;
+    overflow: hidden;
+}
+
+.hero-photo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 420px;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* 6. CAC UU DIEM */
+.benefits {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    padding: 25px 6%;
+    border-bottom: 1px solid var(--border);
+    text-align: center;
+    gap: 15px;
+}
+
+.benefits strong {
+    font-size: 12px;
+}
+
+.benefits p {
+    font-size: 11px;
+    color: var(--muted);
+    margin-top: 7px;
+}
+
+/* 7. KHU VUC CHUNG */
+.section {
+    padding: 60px 6%;
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 15px;
+    margin-bottom: 28px;
+}
+
+.section-heading h2 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 34px;
+    font-weight: normal;
+    line-height: 1.25;
+}
+
+.section-heading p {
+    color: var(--muted);
+    font-size: 12px;
+    margin-top: 9px;
+}
+
+#resultCount {
+    color: var(--muted);
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+/* 8. DANH MUC SAN PHAM */
+.categories {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 15px;
+}
+
+.category-card {
+    display: block;
+    text-align: center;
+    overflow: hidden;
+}
+
+.category-card img {
+    display: block;
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.category-card:hover img {
+    transform: scale(1.04);
+}
+
+.category-card h3 {
+    margin-top: 12px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.category-card:hover h3 {
+    color: var(--accent);
+}
+
+/* 9. KHU VUC SAN PHAM */
+.product-section {
+    background: #faf9f7;
+}
+
+/* 10. BO LOC DANH MUC */
+.filters,
+.subcategory-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+    margin: 15px 0 22px;
+}
+
+.filter-btn,
+.subcategory-list button {
+    background: var(--white);
+    border: 1px solid #dddddd;
+    padding: 10px 14px;
+    font-size: 12px;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.filter-btn.active,
+.filter-btn:hover,
+.subcategory-list button.active,
+.subcategory-list button:hover {
+    background: var(--black);
+    color: var(--white);
+    border-color: var(--black);
+}
+
+.filter-caption {
+    font-size: 11px;
+    letter-spacing: 1px;
+    color: var(--muted);
+    margin-top: 24px;
+}
+
+/* 11. THANH LOC GIA, GIOI TINH VA SAP XEP */
+.catalog-toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 22px 0 28px;
+}
+
+.catalog-toolbar select,
+.catalog-toolbar button {
+    border: 1px solid #dddddd;
+    background: var(--white);
+    padding: 12px;
+    font-size: 12px;
+}
+
+.catalog-toolbar select {
+    flex: 1;
+    min-width: 150px;
+}
+
+.catalog-toolbar button {
+    background: var(--black);
+    color: var(--white);
+    border-color: var(--black);
+    transition: opacity 0.2s ease;
+}
+
+.catalog-toolbar button:hover {
+    opacity: 0.8;
+}
+
+/* 12. LUOI SAN PHAM */
+.products {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 28px 18px;
+}
+
+.product {
+    min-width: 0;
+}
+
+.product[hidden] {
+    display: none !important;
+}
+
+.product-image {
+    height: 290px;
+    background: #eeeeee;
+    position: relative;
+    overflow: hidden;
+}
+
+.product-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.product:hover .product-image img {
+    transform: scale(1.04);
+}
+
+/* Nhan giam gia */
+.badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: var(--white);
+    color: var(--sale);
+    padding: 7px 9px;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+/* Nut yeu thich */
+.heart {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 34px;
+    height: 34px;
+    border: none;
+    border-radius: 50%;
+    background: var(--white);
+    color: var(--black);
+    font-size: 19px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.heart:hover {
+    color: var(--sale);
+}
+
+.heart.liked {
+    color: var(--sale);
+}
+
+/* Thong tin san pham */
+.product-info {
+    padding-top: 13px;
+}
+
+.product-category {
+    color: var(--muted);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.product-name {
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.5;
+    margin: 8px 0;
+}
+
+.price {
+    font-weight: bold;
+    font-size: 14px;
+    color: var(--black);
+}
+
+.old-price {
+    color: #999999;
+    text-decoration: line-through;
+    font-size: 12px;
+    font-weight: normal;
+    margin-left: 6px;
+}
+
+.add-btn {
+    width: 100%;
+    background: var(--white);
+    color: var(--black);
+    border: 1px solid #cccccc;
+    padding: 12px;
+    margin-top: 13px;
+    font-size: 11px;
+    letter-spacing: 0.4px;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.add-btn:hover {
+    background: var(--black);
+    color: var(--white);
+}
+
+#emptyMessage {
+    text-align: center;
+    padding: 35px 0;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+/* 13. BANNER QUANG BA */
+.promo {
+    margin: 10px 6% 60px;
+    background: #e9e3db;
+    padding: 55px 20px;
+    text-align: center;
+}
+
+.promo h2 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 36px;
+    font-weight: normal;
+    line-height: 1.3;
+    margin: 15px 0;
+}
+
+.promo p,
+.newsletter p {
+    color: #555555;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+/* 14. DANG KY NHAN TIN */
+.newsletter {
+    background: #f7f5f1;
+    padding: 55px 20px;
+    text-align: center;
+}
+
+.newsletter h2 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 30px;
+    font-weight: normal;
+    line-height: 1.3;
+}
+
+.newsletter p {
+    margin: 12px 0 22px;
+}
+
+.newsletter form {
+    max-width: 420px;
+    display: flex;
+    margin: auto;
+    border-bottom: 1px solid #555555;
+}
+
+.newsletter input {
+    flex: 1;
+    min-width: 0;
+    padding: 13px 5px;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 13px;
+}
+
+.newsletter button {
+    border: none;
+    background: transparent;
+    font-size: 11px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+/* 15. CHAN TRANG */
+footer {
+    background: #171717;
+    color: var(--white);
+    padding: 45px 6% 25px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 30px;
+}
+
+.footer-brand {
+    font-size: 24px;
+    letter-spacing: 3px;
+    font-weight: bold;
+}
+
+.footer-grid p {
+    color: #bbbbbb;
+    font-size: 12px;
+    line-height: 1.8;
+    margin-top: 15px;
+    max-width: 300px;
+}
+
+footer h3 {
+    font-size: 12px;
+    margin-bottom: 18px;
+}
+
+footer a {
+    display: block;
+    color: #bbbbbb;
+    font-size: 12px;
+    margin: 12px 0;
+    transition: color 0.2s ease;
+}
+
+footer a:hover {
+    color: var(--white);
+}
+
+.copyright {
+    border-top: 1px solid #444444;
+    margin-top: 30px;
+    padding-top: 22px;
+    font-size: 11px;
+    color: #aaaaaa;
+    text-align: center;
+}
+
+/* ========================================
+   16. RESPONSIVE - MAY TINH BANG
+   ======================================== */
+@media (max-width: 1100px) {
+    .header {
+        grid-template-columns: 1fr 1.5fr 1fr;
+        gap: 16px;
+    }
+
+    .logo {
+        font-size: 23px;
+        letter-spacing: 3px;
+    }
+
+    .nav {
+        gap: 20px;
+    }
+
+    .categories {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .products {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .product-image {
+        height: 280px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 2fr 1fr 1fr;
+    }
+}
+
+/* ========================================
+   17. RESPONSIVE - TABLET
+   ======================================== */
+@media (max-width: 900px) {
+    .header {
+        grid-template-columns: 1fr auto;
+    }
+
+    .search {
+        grid-row: 2;
+        grid-column: 1 / -1;
+    }
+
+    .header-actions {
+        gap: 12px;
+    }
+
+    .hero {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    }
+
+    .hero-copy {
+        padding: 35px 7%;
+    }
+
+    .hero h1 {
+        font-size: clamp(34px, 4.5vw, 46px);
+        letter-spacing: -0.5px;
+    }
+
+    .hero-photo,
+    .hero-photo img {
+        min-height: 380px;
+    }
+
+    .benefits {
+        padding: 25px 4%;
+    }
+
+    .products {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .product-image {
+        height: 280px;
+    }
+
+    .footer-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* ========================================
+   18. RESPONSIVE - DIEN THOAI
+   ======================================== */
+@media (max-width: 560px) {
+    .topbar {
+        font-size: 9px;
+        letter-spacing: 0.5px;
+        line-height: 1.6;
+    }
+
+    .header {
+        padding: 18px 4%;
+        gap: 12px;
+    }
+
+    .logo {
+        font-size: 20px;
+        letter-spacing: 2px;
+    }
+
+    .header-actions {
+        gap: 9px;
+        font-size: 11px;
+    }
+
+    .nav {
+        justify-content: flex-start;
+        gap: 18px;
+        padding: 14px 4%;
+        font-size: 11px;
+    }
+
+    .hero {
+        grid-template-columns: minmax(0, 1fr);
+        width: 94%;
+        margin-top: 15px;
+    }
+
+    .hero-copy {
+        padding: 36px 7%;
+    }
+
+    .eyebrow {
+        font-size: 10px;
+        letter-spacing: 2px;
+    }
+
+    .hero h1 {
+        width: 100%;
+        max-width: 100%;
+        font-size: clamp(34px, 8.5vw, 44px);
+        line-height: 1.15;
+        letter-spacing: -0.5px;
+        text-align: left;
+        margin: 17px 0;
+    }
+
+    .hero-copy p {
+        font-size: 13px;
+    }
+
+    .hero-photo,
+    .hero-photo img {
+        min-height: 290px;
+        height: 290px;
+    }
+
+    .benefits {
+        grid-template-columns: minmax(0, 1fr);
+        text-align: left;
+        padding: 25px 6%;
+        gap: 22px;
+    }
+
+    .section {
+        padding: 40px 4%;
+    }
+
+    .section-heading {
+        align-items: flex-start;
+        margin-bottom: 22px;
+    }
+
+    .section-heading h2 {
+        font-size: 27px;
+    }
+
+    .section-heading p {
+        line-height: 1.7;
+    }
+
+    .categories {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px 12px;
+    }
+
+    .category-card img {
+        height: 165px;
+    }
+
+    .category-card h3 {
+        font-size: 12px;
+    }
+
+    .filters,
+    .subcategory-list {
+        gap: 7px;
+    }
+
+    .filter-btn,
+    .subcategory-list button {
+        padding: 9px 10px;
+        font-size: 11px;
+    }
+
+    .catalog-toolbar {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+    }
+
+    .catalog-toolbar select,
+    .catalog-toolbar button {
+        min-width: 0;
+        width: 100%;
+        padding: 11px 8px;
+        font-size: 11px;
+    }
+
+    .products {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 24px 12px;
+    }
+
+    .product-image {
+        height: clamp(160px, 54vw, 240px);
+    }
+
+    .product-name {
+        font-size: 13px;
+    }
+
+    .product-category {
+        font-size: 10px;
+        line-height: 1.5;
+    }
+
+    .price {
+        font-size: 13px;
+    }
+
+    .old-price {
+        display: block;
+        margin: 3px 0 0;
+        font-size: 11px;
+    }
+
+    .add-btn {
+        padding: 11px 5px;
+        font-size: 10px;
+    }
+
+    .promo {
+        margin: 0 4% 40px;
+        padding: 40px 15px;
+    }
+
+    .promo h2 {
+        font-size: 28px;
+    }
+
+    .newsletter {
+        padding: 40px 5%;
+    }
+
+    .newsletter h2 {
+        font-size: 26px;
+    }
+
+    .footer-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 25px 16px;
+    }
+
+    .footer-brand {
+        font-size: 20px;
+        letter-spacing: 2px;
+    }
+
+    .copyright {
+        line-height: 1.7;
+    }
+}
+
+/* ========================================
+   19. RESPONSIVE - DIEN THOAI RAT NHO
+   ======================================== */
+@media (max-width: 360px) {
+    .header-actions {
+        font-size: 10px;
+        gap: 7px;
+    }
+
+    .logo {
+        font-size: 18px;
+        letter-spacing: 1px;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .categories {
+        gap: 16px 10px;
+    }
+
+    .category-card img {
+        height: 140px;
+    }
+
+    .product-image {
+        height: 155px;
+    }
+
+    .filter-btn,
+    .subcategory-list button {
+        padding: 8px;
+        font-size: 10px;
+    }
+
+    .footer-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+/* FIX: tiêu đề banner bị giãn chữ */
+.hero-copy {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left !important;
+}
+
+.hero h1 {
+    display: block !important;
+    width: 100%;
+    max-width: 750px;
+    text-align: left !important;
+    text-align-last: left !important;
+    letter-spacing: normal !important;
+    word-spacing: normal !important;
+    word-break: normal !important;
+    overflow-wrap: normal !important;
+    white-space: normal !important;
+    hyphens: none !important;
+}
+
+.hero h1 span {
+    letter-spacing: normal !important;
+    word-spacing: normal !important;
+    text-align: left !important;
+}
+/* 20. XEM CHI TIET SAN PHAM + GIO HANG */
+.product { background: #fff; }
+.product-info { padding: 14px 2px 0; }
+.product-name { min-height: 42px; }
+.detail-btn, .add-btn { width: 100%; min-height: 42px; display: flex; align-items: center; justify-content: center; padding: 11px 8px; font-size: 10px; letter-spacing: .7px; transition: background .2s ease,color .2s ease,border-color .2s ease; }
+.detail-btn { margin-top: 13px; border: 1px solid #d8d3cd; background: transparent; color: var(--black); }
+.detail-btn:hover { background: #eee9e2; border-color: #b7a28d; }
+.add-btn { margin-top: 7px; background: var(--black); color: #fff; border: 1px solid var(--black); }
+.add-btn:hover { background: var(--accent); border-color: var(--accent); color: #fff; }
+.modal-backdrop { position:fixed; inset:0; z-index:1000; display:none; align-items:center; justify-content:center; padding:24px; background:rgba(20,18,16,.58); }
+.modal-backdrop.open { display:flex; }
+.product-modal { position:relative; width:min(940px,100%); max-height:90vh; overflow:auto; background:#fff; box-shadow:0 24px 80px rgba(0,0,0,.2); }
+.modal-close { width:40px; height:40px; border:0; border-radius:50%; background:#f2f0ec; color:#171717; font-size:27px; line-height:1; display:inline-flex; align-items:center; justify-content:center; cursor:pointer; }
+.product-modal > .modal-close { position:absolute; top:14px; right:14px; z-index:2; }
+.detail-layout { display:grid; grid-template-columns:1fr 1fr; }
+.detail-image-wrap { min-height:510px; background:#f3f0eb; }
+.detail-image-wrap img { width:100%; height:100%; min-height:510px; display:block; object-fit:cover; }
+.detail-copy { padding:58px 38px 36px; }
+.detail-kicker { color:var(--accent); font-size:10px; letter-spacing:1.8px; font-weight:700; }
+.detail-copy h2 { font:400 30px/1.25 Georgia,"Times New Roman",serif; margin:15px 0 12px; }
+.detail-price { font-size:19px; font-weight:700; }
+.detail-price .old-price { margin-left:10px; }
+.detail-description { color:#6d6a66; font-size:13px; line-height:1.8; margin:18px 0 25px; }
+.detail-label { font-size:11px; font-weight:700; letter-spacing:.6px; margin:18px 0 10px; }
+.size-options { display:flex; flex-wrap:wrap; gap:8px; }
+.size-options button { min-width:42px; height:40px; padding:0 12px; border:1px solid #ddd8d1; background:#fff; }
+.size-options button.selected,.size-options button:hover { background:#171717; color:#fff; border-color:#171717; }
+.detail-quantity,.quantity-control { display:flex; align-items:center; gap:0; }
+.detail-quantity button { width:38px; height:38px; border:1px solid #ddd8d1; background:#fff; font-size:18px; }
+.detail-quantity span { width:44px; text-align:center; }
+.detail-add-btn { width:100%; margin-top:25px; padding:16px 12px; border:1px solid #171717; background:#171717; color:#fff; font-size:11px; letter-spacing:.7px; }
+.detail-add-btn:hover { background:var(--accent); border-color:var(--accent); }
+.detail-note { margin-top:15px; font-size:11px; color:#888; }
+.drawer-backdrop { position:fixed; inset:0; z-index:1090; background:rgba(20,18,16,.48); opacity:0; visibility:hidden; transition:opacity .25s ease,visibility .25s ease; }
+.drawer-backdrop.open { opacity:1; visibility:visible; }
+.cart-drawer { position:fixed; z-index:1100; top:0; right:0; height:100dvh; width:min(470px,100%); background:#fff; display:flex; flex-direction:column; transform:translateX(102%); transition:transform .28s ease; box-shadow:-15px 0 50px rgba(0,0,0,.12); }
+.cart-drawer.open { transform:translateX(0); }
+.cart-drawer-header { padding:25px 25px 20px; display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #eee9e3; }
+.cart-drawer-header .eyebrow { font-size:9px; letter-spacing:2px; }
+.cart-drawer-header h2 { margin-top:5px; font:400 25px Georgia,"Times New Roman",serif; }
+.cart-items { flex:1; overflow-y:auto; padding:8px 24px; }
+.cart-item { display:grid; grid-template-columns:92px minmax(0,1fr); gap:15px; padding:18px 0; border-bottom:1px solid #eee9e3; }
+.cart-item > img { width:92px; height:116px; object-fit:cover; background:#f1eee9; }
+.cart-item-info h3 { font-size:13px; font-weight:600; line-height:1.5; }
+.cart-item-meta { font-size:11px; color:#777; margin:5px 0 8px; }
+.cart-item-price { font-size:13px; }
+.quantity-control { margin-top:12px; }
+.quantity-control button { width:28px; height:28px; border:1px solid #ddd8d1; background:#fff; }
+.quantity-control span { min-width:30px; text-align:center; font-size:12px; }
+.quantity-control .remove-item { width:auto; margin-left:auto; border:0; color:#777; text-decoration:underline; font-size:11px; }
+.cart-summary { border-top:1px solid #eae6e0; padding:20px 25px 24px; background:#fcfbf9; }
+.cart-subtotal { display:flex; justify-content:space-between; font-size:14px; }
+.cart-subtotal strong { font-size:18px; }
+.cart-summary > p { font-size:11px; color:#777; line-height:1.6; margin:9px 0 17px; }
+.checkout-btn { width:100%; padding:16px 10px; background:#171717; color:#fff; border:1px solid #171717; font-size:11px; letter-spacing:.8px; }
+.checkout-btn:hover { background:var(--accent); border-color:var(--accent); }
+.continue-shopping { display:block; width:100%; padding:13px; border:0; background:transparent; font-size:12px; text-decoration:underline; }
+.cart-empty { min-height:300px; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; color:#777; }
+.cart-empty > span { font-size:42px; color:var(--accent); }
+.cart-empty h3 { margin-top:12px; color:#171717; font:400 22px Georgia,"Times New Roman",serif; }
+.cart-empty p { margin:8px 0 20px; font-size:12px; }
+.cart-empty button { padding:13px 18px; background:#171717; color:#fff; border:0; font-size:10px; letter-spacing:.7px; }
+.toast { position:fixed; z-index:1200; bottom:24px; left:50%; transform:translate(-50%,15px); opacity:0; visibility:hidden; padding:13px 20px; background:#171717; color:#fff; font-size:12px; box-shadow:0 8px 25px rgba(0,0,0,.18); transition:.2s ease; max-width:calc(100% - 30px); text-align:center; }
+.toast.show { opacity:1; visibility:visible; transform:translate(-50%,0); }
+body.no-scroll { overflow:hidden; }
+@media(max-width:650px) {
+ .modal-backdrop { padding:10px; }
+ .product-modal { max-height:94vh; }
+ .detail-layout { grid-template-columns:1fr; }
+ .detail-image-wrap,.detail-image-wrap img { min-height:0; height:270px; }
+ .detail-copy { padding:25px 22px 24px; }
+ .detail-copy h2 { font-size:25px; padding-right:25px; }
+ .cart-drawer-header { padding:20px 18px 16px; }
+ .cart-items { padding:5px 18px; }
+ .cart-summary { padding:17px 18px 20px; }
+}
+
+
+/* ========================================
+   AUTH - DANG NHAP / DANG KY
+   ======================================== */
+.auth-page {
+    min-height: 100vh;
+    background: #f7f5f1;
+    display: flex;
+    flex-direction: column;
+}
+.auth-shell {
+    width: min(1080px, 92%);
+    margin: 42px auto 60px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: #fff;
+    box-shadow: 0 18px 55px rgba(0,0,0,.08);
+    min-height: 620px;
+}
+.auth-visual {
+    background: #e8e1d7;
+    padding: 52px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+}
+.auth-visual::after {
+    content: "";
+    position: absolute;
+    width: 340px;
+    height: 340px;
+    border: 1px solid rgba(23,23,23,.14);
+    border-radius: 50%;
+    right: -110px;
+    bottom: -120px;
+}
+.auth-visual .logo { font-size: 25px; letter-spacing: 4px; }
+.auth-visual h1 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(38px, 4vw, 58px);
+    line-height: 1.08;
+    font-weight: normal;
+    margin: 26px 0 18px;
+}
+.auth-visual p { max-width: 330px; color: #555; line-height: 1.8; font-size: 14px; }
+.auth-visual .eyebrow { letter-spacing: 2.5px; }
+.auth-visual small { color: #6c6258; letter-spacing: .5px; }
+.auth-form-panel { padding: 54px clamp(25px, 5vw, 65px); display: flex; flex-direction: column; justify-content: center; }
+.auth-form-panel h2 { font-family: Georgia, "Times New Roman", serif; font-size: 34px; font-weight: normal; margin-bottom: 8px; }
+.auth-intro { color: #777; font-size: 13px; margin-bottom: 28px; line-height: 1.7; }
+.auth-form { display: grid; gap: 17px; }
+.auth-field { display: grid; gap: 8px; }
+.auth-field label { font-size: 12px; font-weight: 700; }
+.auth-field input {
+    width: 100%; min-width: 0; padding: 14px 13px;
+    border: 1px solid #ddd; background: #fff; outline: none;
+    font-size: 13px; border-radius: 0;
+}
+.auth-field input:focus { border-color: #a77b55; box-shadow: 0 0 0 2px rgba(167,123,85,.12); }
+.auth-password-wrap { display: flex; }
+.auth-password-wrap input { flex: 1; }
+.auth-password-wrap button { border: 1px solid #ddd; border-left: 0; background: #faf9f7; padding: 0 12px; font-size: 11px; }
+.auth-options { display: flex; align-items: center; justify-content: space-between; gap: 12px; font-size: 12px; color: #666; }
+.auth-options label { display: flex; align-items: center; gap: 7px; }
+.auth-submit { width: 100%; border: 1px solid #171717; background: #171717; color: #fff; padding: 15px; font-size: 12px; font-weight: 700; letter-spacing: 1px; transition: .2s; }
+.auth-submit:hover { background: #a77b55; border-color: #a77b55; }
+.auth-submit:disabled { opacity: .65; cursor: wait; }
+.auth-message { display: none; padding: 11px 12px; font-size: 12px; line-height: 1.6; }
+.auth-message.show { display: block; }
+.auth-message.error { background: #fff0ee; color: #a52a20; border: 1px solid #f1c7c2; }
+.auth-message.success { background: #edf8ef; color: #236b35; border: 1px solid #c8e7ce; }
+.auth-switch { margin-top: 22px; font-size: 12px; color: #666; text-align: center; }
+.auth-switch a, .auth-back { color: #171717; text-decoration: underline; text-underline-offset: 3px; font-weight: 700; }
+.auth-back { display: inline-block; margin-top: 24px; font-size: 12px; text-align: center; }
+.auth-terms { display: flex; align-items: flex-start; gap: 9px; font-size: 11px; color: #666; line-height: 1.6; }
+.auth-terms input { margin-top: 3px; }
+.auth-header { background: #fff; border-bottom: 1px solid #eaeaea; padding: 20px 6%; display: flex; justify-content: space-between; align-items: center; }
+.auth-header .logo { font-size: 24px; }
+.auth-header a:last-child { font-size: 12px; }
+@media (max-width: 760px) {
+    .auth-shell { grid-template-columns: 1fr; margin: 20px auto 35px; min-height: 0; }
+    .auth-visual { min-height: 250px; padding: 28px; }
+    .auth-visual h1 { font-size: 38px; margin: 24px 0 10px; }
+    .auth-visual p { font-size: 12px; }
+    .auth-form-panel { padding: 35px 26px; }
+    .auth-form-panel h2 { font-size: 30px; }
+}

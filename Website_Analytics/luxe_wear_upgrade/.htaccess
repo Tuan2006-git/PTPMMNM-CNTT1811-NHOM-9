@@ -1,0 +1,4 @@
+Options -Indexes
+<Files "users.json">
+  Require all denied
+</Files>

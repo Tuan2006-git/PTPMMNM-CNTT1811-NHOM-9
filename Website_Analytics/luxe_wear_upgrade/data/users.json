@@ -1,0 +1,20 @@
+{
+    "tuan@gmail.com": {
+        "profile": {
+            "id": "a6f29a00f588ee1e",
+            "name": "Tuan",
+            "email": "tuan@gmail.com",
+            "created_at": "2026-10-28T09:30:22+00:00"
+        },
+        "password_hash": "$2y$12$vHWYJPvkpS2UIjJlGpr/1OhxLdAuW4HALq9rmB6IEzM83P2QDWxI6"
+    },
+    "giang@gmail.com": {
+        "profile": {
+            "id": "019ca8f345c3d10d",
+            "name": "giang",
+            "email": "giang@gmail.com",
+            "created_at": "2026-10-30T02:37:11+00:00"
+        },
+        "password_hash": "$2y$12$vCipMf1IyitH4IIbRAbhuOwqPgRE1UDiY9HatKC/GlhphmdYGi4iK"
+    }
+}
