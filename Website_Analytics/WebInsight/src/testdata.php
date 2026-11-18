@@ -17,7 +17,7 @@ function wi_generate_test_data(PDO $pdo, int $siteId, int $sessions): int
         return 0;
     }
 
-    $ins = $pdo->prepare('INSERT OR IGNORE INTO events
+    $ins = $pdo->prepare('INSERT IGNORE INTO events
         (website_id, rule_id, event_uid, session_id, event_type, target, product, path, is_test, created_at, day)
         VALUES (?, ?, ?, ?, ?, ?, ?, ?, 1, ?, ?)');
     $total = 0;

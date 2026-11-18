@@ -10,7 +10,7 @@ foreach (wi_sites($pdo) as $s) {
     printf("#%d %-24s %-9s %s\n   API key: %s\n", $s['id'], $s['name'], $s['active'] ? 'hoạt động' : 'đã tắt', $s['url'], $s['api_key']);
 }
 echo "\n== Số sự kiện ==\n";
-$c = $pdo->query('SELECT COALESCE(SUM(is_test = 0),0) AS r, COALESCE(SUM(is_test = 1),0) AS t FROM events')->fetch();
+$c = $pdo->query('SELECT COALESCE(SUM(CASE WHEN is_test = 0 THEN 1 ELSE 0 END),0) AS r, COALESCE(SUM(CASE WHEN is_test = 1 THEN 1 ELSE 0 END),0) AS t FROM events')->fetch();
 echo "Thật: {$c['r']}   Kiểm thử: {$c['t']}\n";
 echo "\n== Sự kiện thật theo ngày và loại (14 ngày gần nhất) ==\n";
 $rows = $pdo->query("SELECT day, event_type, COUNT(*) AS c FROM events WHERE is_test = 0

@@ -87,9 +87,9 @@ function wi_collect(PDO $pdo, string $raw, ?string $origin = null, bool $isTest 
         }
     }
 
-    // 8. Ghi sự kiện; INSERT OR IGNORE + UNIQUE(website_id, event_uid) => không đếm trùng
+    // 8. Ghi sự kiện; INSERT IGNORE + UNIQUE(website_id, event_uid) => không đếm trùng
     $now = time();
-    $st = $pdo->prepare('INSERT OR IGNORE INTO events
+    $st = $pdo->prepare('INSERT IGNORE INTO events
         (website_id, rule_id, event_uid, session_id, event_type, target, product, path, is_test, created_at, day)
         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
     $st->execute([

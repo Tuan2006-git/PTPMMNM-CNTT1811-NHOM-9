@@ -84,6 +84,6 @@ function wi_create_admin(PDO $pdo, string $username, string $password): void
 {
     $hash = password_hash($password, PASSWORD_DEFAULT);
     $st = $pdo->prepare('INSERT INTO admins (username, password_hash, created_at) VALUES (?, ?, ?)
-                         ON CONFLICT(username) DO UPDATE SET password_hash = excluded.password_hash');
+                         ON DUPLICATE KEY UPDATE password_hash = VALUES(password_hash)');
     $st->execute([$username, $hash, date('Y-m-d H:i:s')]);
 }

@@ -18,7 +18,7 @@ need_php() {
 case "${1:-help}" in
   install)   # Cài PHP và extension cần thiết
     sudo apt update
-    sudo apt install -y php-cli php-sqlite3 zip unzip curl
+    sudo apt install -y php-cli php-mysql php-sqlite3 zip unzip curl
     php -v
     ;;
   check)     # Kiểm tra môi trường
@@ -40,7 +40,7 @@ case "${1:-help}" in
       node --check public/assets/tracker.js && node --check public/assets/app.js && echo "[OK] JavaScript đúng cú pháp."
     fi
     ;;
-  init)      # Tạo CSDL + tài khoản quản trị + website demo
+  init)      # Tạo CSDL và tài khoản quản trị
     need_php
     php scripts/init_db.php
     ;;
@@ -51,8 +51,7 @@ case "${1:-help}" in
   run)       # Khởi động máy chủ PHP (Ctrl+C để dừng)
     need_php
     echo "WebInsight chạy tại http://$HOST:$PORT  (tài khoản mặc định: admin / Admin@123)"
-    echo "Trang demo: http://$HOST:$PORT/demo.php"
-    php -S "$HOST:$PORT" -t public
+        php -S "$HOST:$PORT" -t public
     ;;
   open)      # Mở trình duyệt (WSL: dùng trình duyệt Windows)
     url="http://$HOST:$PORT/"
@@ -77,9 +76,8 @@ case "${1:-help}" in
     need_php
     php scripts/purge.php "$2"
     ;;
-  reset)     # Xóa CSDL để làm lại từ đầu
-    read -r -p "Xóa toàn bộ CSDL (data/webinsight.sqlite)? Gõ 'yes' để xác nhận: " ans
-    if [ "$ans" = "yes" ]; then rm -f data/webinsight.sqlite data/webinsight.sqlite-journal; echo "Đã xóa. Chạy ./lab.sh init để tạo lại."; fi
+  reset)     # Không tự xóa MySQL để tránh mất dữ liệu ngoài ý muốn
+    echo "WebInsight hiện dùng MySQL. Hãy sao lưu trước khi xóa hoặc tạo lại các bảng trong database webinsight."
     ;;
   zip)       # Đóng gói dự án
     zip -r ../WebInsight_DeTai17.zip . -x 'data/*.sqlite*' 'logs/*.log' '.git/*' >/dev/null && echo "Đã tạo ../WebInsight_DeTai17.zip"
@@ -87,10 +85,10 @@ case "${1:-help}" in
   *)
     cat <<'HELP'
 Lệnh của lab.sh:
-  install   Cài PHP + extension (sudo apt)
+  install   Cài PHP + MySQL extension (sudo apt)
   check     Kiểm tra môi trường
   lint      Kiểm tra cú pháp PHP/JS
-  init      Tạo CSDL, tài khoản admin, website demo
+  init      Tạo CSDL và tài khoản admin
   admin     Tạo/đặt lại tài khoản:  ./lab.sh admin <tên> <mật_khẩu>
   run       Chạy máy chủ PHP (HOST/PORT đổi được: PORT=9000 ./lab.sh run)
   open      Mở trình duyệt

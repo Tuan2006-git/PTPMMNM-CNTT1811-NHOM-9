@@ -9,7 +9,7 @@ function wi_valid_date($s): bool
     return checkdate((int) $m[2], (int) $m[3], (int) $m[1]);
 }
 
-/** Đọc bộ lọc từ URL: website, khoảng ngày, loại dữ liệu (thật / kiểm thử). */
+/** Đọc bộ lọc website và khoảng ngày. */
 function wi_filters(): array
 {
     $from = wi_valid_date($_GET['from'] ?? null) ? $_GET['from'] : date('Y-m-d', strtotime('-6 days'));
@@ -21,15 +21,15 @@ function wi_filters(): array
         'site' => (int) ($_GET['site'] ?? 0),
         'from' => $from,
         'to'   => $to,
-        'mode' => (($_GET['mode'] ?? 'real') === 'test') ? 'test' : 'real',
+        'mode' => 'real',
     ];
 }
 
 /** Tạo mệnh đề WHERE từ bộ lọc. Trả về [sql, params]. */
 function wi_where(array $f): array
 {
-    $sql = 'day BETWEEN :from AND :to AND is_test = :test';
-    $p = [':from' => $f['from'], ':to' => $f['to'], ':test' => $f['mode'] === 'test' ? 1 : 0];
+    $sql = 'day BETWEEN :from AND :to AND is_test = 0';
+    $p = [':from' => $f['from'], ':to' => $f['to']];
     if ($f['site'] > 0) {
         $sql .= ' AND website_id = :site';
         $p[':site'] = $f['site'];
@@ -151,12 +151,12 @@ function wi_funnel_run(PDO $pdo, array $funnel, array $f): array
     $uniq = array_values(array_unique($ids));
     $ph = implode(',', array_fill(0, count($uniq), '?'));
     $params = array_merge(
-        [(int) $funnel['website_id'], $f['mode'] === 'test' ? 1 : 0, $f['from'], $f['to']],
+        [(int) $funnel['website_id'], $f['from'], $f['to']],
         $uniq
     );
     $st = $pdo->prepare(
         "SELECT session_id, rule_id FROM events
-         WHERE website_id = ? AND is_test = ? AND day BETWEEN ? AND ? AND rule_id IN ($ph)
+         WHERE website_id = ? AND is_test = 0 AND day BETWEEN ? AND ? AND rule_id IN ($ph)
          ORDER BY session_id, id"
     );
     $st->execute($params);

@@ -8,8 +8,7 @@ $check = function (string $label, bool $ok, string $fix = '') use (&$bad) {
     if (!$ok) { $bad++; }
 };
 $check('PHP >= 8.1 (hiện tại ' . PHP_VERSION . ')', version_compare(PHP_VERSION, '8.1.0', '>='), 'sudo apt install php-cli');
-$check('Extension pdo_sqlite', extension_loaded('pdo_sqlite'), 'sudo apt install php-sqlite3');
-$check('Extension sqlite3', extension_loaded('sqlite3'), 'sudo apt install php-sqlite3');
+$check('Extension pdo_mysql', extension_loaded('pdo_mysql'), 'sudo apt install php-mysql');
 $check('Extension json', extension_loaded('json'), 'sudo apt install php-cli');
 foreach (['data', 'logs'] as $d) {
     if (!is_dir("$root/$d")) { @mkdir("$root/$d", 0775, true); }

@@ -2,3 +2,4 @@ data/*.sqlite
 data/*.sqlite-journal
 logs/*.log
 *.zip
+config/config.php

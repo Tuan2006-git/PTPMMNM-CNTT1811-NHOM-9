@@ -94,7 +94,7 @@ function wi_setting(PDO $pdo, string $name, string $default = ''): string
 function wi_set_setting(PDO $pdo, string $name, string $value): void
 {
     $st = $pdo->prepare('INSERT INTO settings (name, value) VALUES (?, ?)
-                         ON CONFLICT(name) DO UPDATE SET value = excluded.value');
+                         ON DUPLICATE KEY UPDATE value = VALUES(value)');
     $st->execute([$name, $value]);
 }
 

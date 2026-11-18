@@ -39,9 +39,6 @@ function wi_delta($old, $new): string
 
 wi_header('Tổng quan', 'dashboard');
 wi_filter_form($f, $sites);
-if ($f['mode'] === 'test') {
-    echo '<div class="alert alert-info">Đang xem <strong>dữ liệu kiểm thử</strong> (tách biệt với dữ liệu thật).</div>';
-}
 ?>
 <div class="grid grid-3">
   <div class="card stat">
@@ -117,7 +114,7 @@ if ($f['mode'] === 'test') {
 
 <div class="card">
   <h2>Thống kê theo trang</h2>
-  <?php if (!$pages): ?><p class="empty">Chưa có dữ liệu. Hãy mở <a href="demo.php" target="_blank" rel="noopener">website demo</a> và thao tác để phát sinh sự kiện.</p>
+  <?php if (!$pages): ?><p class="empty">Chưa có dữ liệu. Hãy cài mã theo dõi WebInsight vào website đã đăng ký và thực hiện một số thao tác.</p>
   <?php else: ?>
   <div class="table-wrap"><table>
     <thead><tr><th>Trang</th><th class="num">Lượt xem</th><th class="num">Tương tác</th></tr></thead>
